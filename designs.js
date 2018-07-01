@@ -6,7 +6,7 @@ $(function() {
 
 $("#sizePicker").submit(function(event) {
 
-    event.preventDefault();
+    event.preventDefault();				//avoids the page to be refreshed after clicking on submit button.
 
     makeGrid();
 
@@ -18,15 +18,15 @@ $("#sizePicker").submit(function(event) {
 
     function makeGrid() {
 		
-		let gridHeight = $("#inputHeight").val();
+		let gridHeight = $("#inputHeight").val();     // Grid height is the number of rows.
 
-		let gridWeight = $("#inputWeight").val();
+		let gridWeight = $("#inputWeight").val();     // Grid weight is the number of columns.
 		gridMaker.empty();
 
         for (let row  = 0 ; row <= gridHeight - 1 ; row++){
             gridMaker.append("<tr>");
                 for (let column = 0 ; column <= gridWeight - 1; column++){
-                 $("tr").last().append("<td></td>");
+                 $("tr").last().append("<td></td>");    //makes sure that the cells are added only to the last created table row and not for all.
                 }
                 gridMaker.append("</tr>");
         }
@@ -36,16 +36,10 @@ $("#sizePicker").submit(function(event) {
 
 	// add colors to individual cells
 	
-	$('td').click(function inputColour(){
-        myColour = $('#colorPicker').val();
-		
-        if ($(this).attr('style')) {
-            $(this).removeAttr('style')
-        } else {
-            $(this).attr('style', 'background-color:' + myColour);
-        }
-
-    })
+	$('#pixelCanvas').on("click" , "td", function () {            //event delegation
+	const mark = $('#colorPicker').val();
+	$(this).css('background-color',mark);
+    });
 		inputColour();
 
 });
