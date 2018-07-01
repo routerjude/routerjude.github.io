@@ -1,0 +1,51 @@
+body {
+    text-align: center;
+	
+}
+
+h1 {
+    font-family: Monoton;
+    font-size: 70px;
+    margin: 0.2em;
+	color: rgb(34, 163, 22)
+	}
+
+h2 {
+    font-family: 'Varela Round', sans-serif;
+	margin: 1em 0 0.25em;
+	color: rgb(229, 48, 169);
+	font-size: 18px;
+}
+
+h2:first-of-type {
+    margin-top: 0.5em;
+}
+body {
+    background-image: url("ALC.jpg");
+}
+
+table,
+tr,
+td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+tr {
+    height: 20px;
+}
+
+td {
+    width: 20px;
+}
+
+input[type=number] {
+    width: 6em;
+}
+#sizePicker {
+   font-family:Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+}
